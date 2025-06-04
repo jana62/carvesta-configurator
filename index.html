@@ -1,27 +1,28 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Carvesta Konfigurator</title>
   <style>
     body {
+      background: #f3f3f3;
       font-family: sans-serif;
-      background: #f5f5f5;
       display: flex;
       flex-direction: column;
       align-items: center;
       padding: 20px;
     }
     h1 {
-      margin-bottom: 10px;
+      margin-bottom: 20px;
     }
-    .preview {
-      width: 480px;
-      height: 480px;
+    #preview {
+      width: 500px;
+      height: 500px;
       background-color: black;
       background-size: cover;
       background-position: center;
+      border: 2px solid #000;
       margin-bottom: 20px;
     }
     .button-group {
@@ -29,37 +30,37 @@
       flex-wrap: wrap;
       gap: 10px;
       justify-content: center;
-      margin-bottom: 40px;
     }
-    button {
-      padding: 10px 20px;
-      border: none;
-      background: #222;
+    .button-group button {
+      background: #111;
       color: white;
+      border: none;
+      padding: 10px 16px;
       cursor: pointer;
+      transition: background 0.2s;
     }
-    button:hover {
-      background: #555;
+    .button-group button:hover {
+      background: #333;
     }
   </style>
 </head>
 <body>
   <h1>Boden auswählen</h1>
-  <div class="preview" id="preview"></div>
-
+  <div id="preview"></div>
   <div class="button-group">
-    <button onclick="setFloor('orginal.png')">Original</button>
-    <button onclick="setFloor('marmor_weiss.png')">Marmor Weiß</button>
-    <button onclick="setFloor('marmor_schwarz.png')">Marmor Schwarz</button>
-    <button onclick="setFloor('holz_schwarz.png')">Holz Schwarz</button>
-    <button onclick="setFloor('carbon.png')">Carbon</button>
-    <button onclick="setFloor('beton.png')">Beton</button>
+    <button onclick="setFloor('boden-original.png')">Original</button>
+    <button onclick="setFloor('boden-marmor-weiss.png')">Marmor Weiß</button>
+    <button onclick="setFloor('boden-marmor-schwarz.png')">Marmor Schwarz</button>
+    <button onclick="setFloor('boden-holz-schwarz.png')">Holz Schwarz</button>
+    <button onclick="setFloor('boden-carbon.png')">Carbon</button>
+    <button onclick="setFloor('boden-beton.png')">Beton</button>
   </div>
 
   <script>
-    function setFloor(image) {
-      document.getElementById('preview').style.backgroundImage = `url(${image})`;
+    function setFloor(filename) {
+      document.getElementById("preview").style.backgroundImage = `url('${filename}')`;
     }
   </script>
 </body>
 </html>
+
