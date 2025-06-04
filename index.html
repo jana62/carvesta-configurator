@@ -2,45 +2,49 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Carvesta Konfigurator</title>
   <style>
     body {
-      background: #f3f3f3;
       font-family: sans-serif;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 20px;
+      background: #f4f4f4;
     }
+
     h1 {
       margin-bottom: 20px;
     }
+
     #preview {
       width: 500px;
       height: 500px;
       background-color: black;
       background-size: cover;
       background-position: center;
-      border: 2px solid #000;
+      border: 2px solid black;
       margin-bottom: 20px;
     }
+
     .button-group {
       display: flex;
-      flex-wrap: wrap;
       gap: 10px;
+      flex-wrap: wrap;
       justify-content: center;
     }
+
     .button-group button {
-      background: #111;
+      padding: 10px 15px;
+      background: black;
       color: white;
       border: none;
-      padding: 10px 16px;
       cursor: pointer;
       transition: background 0.2s;
     }
+
     .button-group button:hover {
-      background: #333;
+      background: #111;
     }
   </style>
 </head>
@@ -58,9 +62,10 @@
 
   <script>
     function setFloor(filename) {
-      document.getElementById("preview").style.backgroundImage = `url('${filename}')`;
+      document.getElementById("preview").style.backgroundImage = "url('" + filename + "')";
     }
   </script>
 </body>
 </html>
+
 
