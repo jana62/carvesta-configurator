@@ -12,60 +12,98 @@
       align-items: center;
       background: #f4f4f4;
     }
-
     h1 {
-      margin-bottom: 20px;
+      margin: 20px;
     }
-
-    #preview {
-      width: 500px;
-      height: 500px;
-      background-color: black;
-      background-size: cover;
-      background-position: center;
+    #konfigurator {
+      position: relative;
+      width: 600px;
+      height: 600px;
       border: 2px solid black;
       margin-bottom: 20px;
     }
-
+    .layer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+    }
     .button-group {
       display: flex;
-      gap: 10px;
       flex-wrap: wrap;
       justify-content: center;
+      gap: 10px;
+      margin-bottom: 30px;
     }
-
     .button-group button {
       padding: 10px 15px;
       background: black;
       color: white;
       border: none;
       cursor: pointer;
-      transition: background 0.2s;
     }
-
     .button-group button:hover {
-      background: #111;
+      background: #444;
     }
   </style>
 </head>
 <body>
-  <h1>Boden auswählen</h1>
-  <div id="preview"></div>
+  <h1>Carvesta Konfigurator</h1>
+
+  <div id="konfigurator">
+    <div id="layer-fenster" class="layer"></div>
+    <div id="layer-griff" class="layer"></div>
+    <div id="layer-licht" class="layer"></div>
+    <div id="layer-sockel" class="layer"></div>
+    <div id="layer-boden" class="layer"></div>
+  </div>
+
+  <h2>Bodenbelag wählen</h2>
   <div class="button-group">
-    <button onclick="setFloor('boden-original.png')">Original</button>
-    <button onclick="setFloor('boden-marmor-weiss.png')">Marmor Weiß</button>
-    <button onclick="setFloor('boden-marmor-schwarz.png')">Marmor Schwarz</button>
-    <button onclick="setFloor('boden-holz-schwarz.png')">Holz Schwarz</button>
-    <button onclick="setFloor('boden-carbon.png')">Carbon</button>
-    <button onclick="setFloor('boden-beton.png')">Beton</button>
+    <button onclick="setLayer('boden', 'boden-beton.png.png')">Beton</button>
+    <button onclick="setLayer('boden', 'boden-carbon.png.png')">Carbon</button>
+    <button onclick="setLayer('boden', 'boden-holz-schwarz.png.png')">Holz Schwarz</button>
+    <button onclick="setLayer('boden', 'boden-marmor-schwarz.png.png')">Marmor Dunkel</button>
+    <button onclick="setLayer('boden', 'boden-marmor-weiss.png.png')">Marmor Hell</button>
+    <button onclick="setLayer('boden', 'boden-original.png.png')">Original</button>
+  </div>
+
+  <h2>Sockelleiste wählen</h2>
+  <div class="button-group">
+    <button onclick="setLayer('sockel', 'sockel-normal.png.png')">Sockel normal</button>
+    <button onclick="setLayer('sockel', 'sockel-led.png.png')">Sockel LED</button>
+  </div>
+
+  <h2>Deckenbeleuchtung wählen</h2>
+  <div class="button-group">
+    <button onclick="setLayer('licht', 'licht-panelgross.png.png')">Panel Groß</button>
+    <button onclick="setLayer('licht', 'licht-panelreihe.png.png')">Panel Reihe</button>
+    <button onclick="setLayer('licht', 'licht-rahmen.png.png')">Rahmen</button>
+    <button onclick="setLayer('licht', 'licht-streifen.png.png')">Streifen</button>
+    <button onclick="setLayer('licht', 'licht-hexagon.png.png')">Hexagon</button>
+  </div>
+
+  <h2>Türgriff wählen</h2>
+  <div class="button-group">
+    <button onclick="setLayer('griff', 'griff-kurz.png.png')">Kurz</button>
+    <button onclick="setLayer('griff', 'griff-lang.png.png')">Lang</button>
+    <button onclick="setLayer('griff', 'griff-eckig.png.png')">Eckig</button>
+  </div>
+
+  <h2>Fenster wählen</h2>
+  <div class="button-group">
+    <button onclick="setLayer('fenster', 'fenster-klar.png.png')">Klar</button>
+    <button onclick="setLayer('fenster', 'fenster-getoent.png.png')">Getönt</button>
   </div>
 
   <script>
-    function setFloor(filename) {
-      document.getElementById("preview").style.backgroundImage = "url('" + filename + "')";
+    function setLayer(type, filename) {
+      document.getElementById('layer-' + type).style.backgroundImage = "url('" + filename + "')";
     }
   </script>
 </body>
 </html>
-
 
