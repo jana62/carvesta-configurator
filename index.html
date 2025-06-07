@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Carvesta Konfigurator</title>
   <style>
     body {
@@ -25,10 +25,10 @@
     }
     .layer {
       position: absolute;
-      top: 0;
-      left: 0;
       width: 100%;
       height: 100%;
+      top: 0;
+      left: 0;
       background-size: cover;
       background-position: center;
     }
@@ -39,82 +39,89 @@
       margin-bottom: 20px;
       justify-content: center;
     }
-    .button-group button {
-      padding: 5px 10px;
+    button {
+      padding: 6px 10px;
       background: black;
       color: white;
       border: none;
       cursor: pointer;
     }
-    .button-group button:hover {
-      background: #111;
+    button:hover {
+      background-color: #111;
     }
   </style>
 </head>
 <body>
-  <h1>Carvesta Konfigurator</h1>
-  <div id="preview">
-    <div id="floor" class="layer"></div>
-    <div id="skirting" class="layer"></div>
-    <div id="light" class="layer"></div>
-    <div id="handle" class="layer"></div>
-    <div id="window" class="layer"></div>
-  </div>
 
-  <!-- Boden -->
-  <h3>Bodenbelag wählen</h3>
-  <div class="button-group">
-    <button onclick="setImage('floor', 'boden-beton.png')">Beton</button>
-    <button onclick="setImage('floor', 'boden-carbon.png')">Carbon</button>
-    <button onclick="setImage('floor', 'boden-holz-schwarz.png')">Holz Schwarz</button>
-    <button onclick="setImage('floor', 'boden-marmor-schwarz.png')">Marmor Dunkel</button>
-    <button onclick="setImage('floor', 'boden-marmor-weiss.png')">Marmor Hell</button>
-    <button onclick="setImage('floor', 'boden-original.png')">Original</button>
-    <button onclick="setImage('floor', '')">Zurück</button>
-  </div>
+<h1>Carvesta Konfigurator</h1>
 
-  <!-- Sockel -->
-  <h3>Sockelleiste wählen</h3>
-  <div class="button-group">
-    <button onclick="setImage('skirting', 'sockel-normal.png')">Sockel normal</button>
-    <button onclick="setImage('skirting', 'sockel-led.png')">Sockel LED</button>
-    <button onclick="setImage('skirting', '')">Zurück</button>
-  </div>
+<div id="preview">
+  <div id="floor" class="layer"></div>
+  <div id="skirting" class="layer"></div>
+  <div id="light" class="layer"></div>
+  <div id="handle" class="layer"></div>
+  <div id="window" class="layer"></div>
+</div>
 
-  <!-- Licht -->
-  <h3>Deckenbeleuchtung wählen</h3>
-  <div class="button-group">
-    <button onclick="setImage('light', 'licht-panelgross.png')">Panel Groß</button>
-    <button onclick="setImage('light', 'licht-panelreihe.png')">Panel Reihe</button>
-    <button onclick="setImage('light', 'licht-rahmen.png')">Rahmen</button>
-    <button onclick="setImage('light', 'licht-streifen.png')">Streifen</button>
-    <button onclick="setImage('light', 'licht-hexagon.png')">Hexagon</button>
-    <button onclick="setImage('light', '')">Zurück</button>
-  </div>
+<!-- Boden -->
+<h3>Bodenbelag wählen</h3>
+<div class="button-group">
+  <button onclick="setLayer('floor', 'boden-beton.png')">Beton</button>
+  <button onclick="setLayer('floor', 'boden-carbon.png')">Carbon</button>
+  <button onclick="setLayer('floor', 'boden-holz-schwarz.png')">Holz Schwarz</button>
+  <button onclick="setLayer('floor', 'boden-marmor-schwarz.png')">Marmor Dunkel</button>
+  <button onclick="setLayer('floor', 'boden-marmor-weiss.png')">Marmor Hell</button>
+  <button onclick="setLayer('floor', 'boden-original.png')">Original</button>
+  <button onclick="setLayer('floor', '')">Zurück</button>
+</div>
 
-  <!-- Türgriff -->
-  <h3>Türgriff wählen</h3>
-  <div class="button-group">
-    <button onclick="setImage('handle', 'griff-kurz.png')">Kurz</button>
-    <button onclick="setImage('handle', 'griff-lang.png')">Lang</button>
-    <button onclick="setImage('handle', 'griff-eckig.png')">Eckig</button>
-    <button onclick="setImage('handle', '')">Zurück</button>
-  </div>
+<!-- Sockel -->
+<h3>Sockelleiste wählen</h3>
+<div class="button-group">
+  <button onclick="setLayer('skirting', 'sockel-normal.png')">Sockel normal</button>
+  <button onclick="setLayer('skirting', 'sockel-led.png')">Sockel LED</button>
+  <button onclick="setLayer('skirting', '')">Zurück</button>
+</div>
 
-  <!-- Fenster -->
-  <h3>Fenster wählen</h3>
-  <div class="button-group">
-    <button onclick="setImage('window', 'fenster-klar.png')">Klar</button>
-    <button onclick="setImage('window', 'fenster-getoent.png')">Getönt</button>
-    <button onclick="setImage('window', '')">Zurück</button>
-  </div>
+<!-- Licht -->
+<h3>Deckenbeleuchtung wählen</h3>
+<div class="button-group">
+  <button onclick="setLayer('light', 'licht-panelgross.png')">Panel Groß</button>
+  <button onclick="setLayer('light', 'licht-panelreihe.png')">Panel Reihe</button>
+  <button onclick="setLayer('light', 'licht-rahmen.png')">Rahmen</button>
+  <button onclick="setLayer('light', 'licht-streifen.png')">Streifen</button>
+  <button onclick="setLayer('light', 'licht-hexagon.png')">Hexagon</button>
+  <button onclick="setLayer('light', '')">Zurück</button>
+</div>
 
-  <script>
-    function setImage(layerId, filename) {
-      const layer = document.getElementById(layerId);
-      layer.style.backgroundImage = filename ? `url('${filename}')` : '';
+<!-- Türgriff -->
+<h3>Türgriff wählen</h3>
+<div class="button-group">
+  <button onclick="setLayer('handle', 'griff-kurz.png')">Kurz</button>
+  <button onclick="setLayer('handle', 'griff-lang.png')">Lang</button>
+  <button onclick="setLayer('handle', 'griff-eckig.png')">Eckig</button>
+  <button onclick="setLayer('handle', '')">Zurück</button>
+</div>
+
+<!-- Fenster -->
+<h3>Fenster wählen</h3>
+<div class="button-group">
+  <button onclick="setLayer('window', 'fenster-klar.png')">Klar</button>
+  <button onclick="setLayer('window', 'fenster-getoent.png')">Getönt</button>
+  <button onclick="setLayer('window', '')">Zurück</button>
+</div>
+
+<script>
+  function setLayer(layerId, filename) {
+    const layer = document.getElementById(layerId);
+    if (filename) {
+      layer.style.backgroundImage = `url('${filename}')`;
+    } else {
+      layer.style.backgroundImage = '';
     }
-  </script>
+  }
+</script>
+
 </body>
 </html>
 
