@@ -58,8 +58,8 @@
     <div class="layer" id="layer-floor"></div>
     <div class="layer" id="layer-sockel"></div>
     <div class="layer" id="layer-licht"></div>
-    <div class="layer" id="layer-griff"></div>
-    <div class="layer" id="layer-fenster"></div>
+    <div class="layer" id="layer-griff"></div> <!-- Wichtig: Layer für Türgriff -->
+    <div class="layer" id="layer-fenster"></div> <!-- Wichtig: Layer für Fenster -->
   </div>
 
   <h3>Bodenbelag wählen</h3>
@@ -108,10 +108,8 @@
   <script>
     function setLayer(layerName, filename) {
       const layer = document.getElementById('layer-' + layerName);
-      if (filename) {
-        layer.style.backgroundImage = "url('" + filename + "')";
-      } else {
-        layer.style.backgroundImage = "";
+      if (layer) {
+        layer.style.backgroundImage = filename ? `url('${filename}')` : '';
       }
     }
   </script>
